@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <style>
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
 
+.cards .red {
+  background-color: #007e9e;
+}
+
+.cards .blue {
+  background-color: #007e9e;
+}
+
+.cards .green {
+  background-color: #007e9e;
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cards .card p.tip {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+}
+
+.cards .card:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
 *{
   color: aliceblue;
 }
 
-.ahmed{
-  width: 110px;
-  height: 150px;
-  font-size: 15.5px;
-}
  
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
@@ -41,7 +84,7 @@ body::before {
 }
 
 .wrapper {
-  width: 400px;
+  width: 550px;
   border-radius: 8px;
   padding: 30px;
   text-align: center;
@@ -124,20 +167,6 @@ h2 {
 .wrapper a:hover {
   text-decoration: underline;
 }
-
-a {
-  background: #fffdfd;
-  color: #000;
-  font-weight: 600;
-  border: none;
-  padding: 12px 20px;
-  cursor: pointer;
-  border-radius: 3px;
-  font-size: 16px;
-  border: 2px solid transparent;
-  transition: 0.3s ease;
-}
-
 
 
 .register {
@@ -289,28 +318,49 @@ a {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="style.css">
+  <title>Home</title>
   <link rel="icon" href="/2.png">
 
 </head>
 <body>
   <div class="wrapper">
     <form id="form" class="container m-4 pl-4" method="POST">
+
       <div class="field">
-      
-          <a href="/Attendance-System.html" class="mme" style="color: #000000; text-decoration:none; "  >
-            attendance system
-        </a>
 
-          <br><br><br>
+        <a href="/Attendance-System.html">
+        <div class="cards">
+            <div class="card red">
+                <p class="tip">Attendance system</p>
+            </div></a>
 
-          <a href="/Incident Report (1).html" class="mme" style="color: #000000; text-decoration:none;"  >
-            
-            Incident Report
-        </a>
-        <br><br>
-          
+            <a href="/Incident Report (1).html">
+            <div class="card blue">
+                <p class="tip">Incident Report</p>
+            </div></a>
+
+            <a href="/Friday Attendance.html">
+            <div class="card green">
+                <p class="tip">(Friday) attendance system </p>
+            </div>
+
+             
+        </div></a>
+<br>
+    <br>
+<a href="/admin.html" style="  background: #fff;
+color: #000;
+font-weight: 600;
+border: none;
+padding: 12px 190px;
+cursor: pointer;
+border-radius: 30px;
+font-size: 16px;
+border: 2px solid transparent;
+transition: 0.3s ease;
+">control Board</a>
+<br>
+    <br>
         </div>
         <div class="control">
           <p><br>If there is any problem with the system,contact this email : agsfazza@gmail.com </p>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<style>
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.cards .red {
+  background-color: #007e9e;
+}
+
+.cards .blue {
+  background-color: #007e9e;
+}
+
+.cards .green {
+  background-color: #007e9e;
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cards .card p.tip {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+}
+
+.cards .card:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+*{
+  color: aliceblue;
+}
+
+ 
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("/11.png"), #000;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 550px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 35px 0;
+  color: #fff;
+}
+
+#remember {
+  accent-color: #fff;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 8px;
+}
+
+.wrapper a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+}
+
+
+.cl-checkbox {
+  position: relative;
+  display: inline-block;
+ }
+ 
+ /* Input */
+ .cl-checkbox > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none;
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+ }
+ 
+ /* Span */
+ .cl-checkbox > span {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+ }
+ 
+ /* Box */
+ .cl-checkbox > span::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 3px 11px 3px 1px;
+  border: solid 2px;
+  /* Safari */
+  border-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+  transition: border-color 0.2s, background-color 0.2s;
+ }
+ 
+ /* Checkmark */
+ .cl-checkbox > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right: none;
+  border-top: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+ }
+ 
+ /* Checked, Indeterminate */
+ .cl-checkbox > input:checked,
+ .cl-checkbox > input:indeterminate {
+  background-color: #018786;
+ }
+ 
+ .cl-checkbox > input:checked + span::before,
+ .cl-checkbox > input:indeterminate + span::before {
+  border-color: #018786;
+  background-color: #018786;
+ }
+ 
+ .cl-checkbox > input:checked + span::after,
+ .cl-checkbox > input:indeterminate + span::after {
+  border-color: #fff;
+ }
+ 
+ .cl-checkbox > input:indeterminate + span::after {
+  border-left: none;
+  transform: translate(4px, 3px);
+ }
+ 
+ /* Hover, Focus */
+ .cl-checkbox:hover > input {
+  opacity: 0.04;
+ }
+ 
+ .cl-checkbox > input:focus {
+  opacity: 0.12;
+ }
+ 
+ .cl-checkbox:hover > input:focus {
+  opacity: 0.16;
+ }
+ 
+ /* Active */
+ .cl-checkbox > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+ }
+ 
+ .cl-checkbox > input:active + span::before {
+  border-color: #85b8b7;
+ }
+ 
+ .cl-checkbox > input:checked:active + span::before {
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+ }
+ 
+ /* Disabled */
+ .cl-checkbox > input:disabled {
+  opacity: 0;
+ }
+ 
+ .cl-checkbox > input:disabled + span {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: initial;
+ }
+ 
+ .cl-checkbox > input:disabled + span::before {
+  border-color: currentColor;
+ }
+ 
+ .cl-checkbox > input:checked:disabled + span::before,
+ .cl-checkbox > input:indeterminate:disabled + span::before {
+  border-color: transparent;
+  background-color: currentColor;
+ }
+ 
+</style>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" href="/2.png">
+
+</head>
+<body>
+  <div class="wrapper">
+    <form id="form" class="container m-4 pl-4" method="POST">
+
+      <div class="field">
+
+        <a href="https://docs.google.com/spreadsheets/d/1gBbQrzXLdIRN7bSFk2nTVjKRIaLfxD2-Ve2KLW6-c6Q/edit?usp=sharing">
+        <div class="cards">
+            <div class="card red">
+                <p class="tip">Attendance system</p>
+            </div></a>
+
+            <a href="https://docs.google.com/spreadsheets/d/1d6lYCsg7H4r6h5JapKzZyrnc-RIvaIgTQwuJiVLzZ2I/edit?usp=sharing">
+            <div class="card blue">
+                <p class="tip">Incident Report</p>
+            </div></a>
+
+            <a href="https://docs.google.com/spreadsheets/d/1KMGIqE4gqjDnHtDcrAemt2SWzQHHX2nBirIl13tPjH8/edit?usp=sharing">
+            <div class="card green">
+                <p class="tip">(Friday) attendance system </p>
+            </div>
+        </div></a>
+
+
+    <br>
+        </div>
+        <div class="control">
+          <p><br>If there is any problem with the system,contact this email : agsfazza@gmail.com </p>
+        </div>
+      </div>
+    </form>
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 20px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: rgb(0, 0, 0);
+      "
+    ></div>
+  </div>
+</body>
+</html>

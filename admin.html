@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>admin Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <img src="/Screenshot 2024-02-16 193910.png" alt="">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    var username = document.getElementById("loginUsername").value;
+    var password = document.getElementById("loginPassword").value;
+
+    // Check if the user has registered with admin credentials
+    if (username === "mit" && password === "mit@595625") {
+        alert("Login successful!");
+        // Redirect the user to the main page
+        window.location.href = "/admin-p.html"; // Change "main_page.html" to your actual main page URL
+    } else {
+        alert("Invalid username or password. Please try again.");
+    }
+});
+
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    var username = document.getElementById("registerUsername").value;
+    var password = document.getElementById("registerPassword").value;
+
+    // Store the username and password in local storage
+    localStorage.setItem(username, password);
+    
+    // If registering with admin credentials, redirect to main page
+    if (username === "admin" && password === "admin") {
+        alert("Registration successful! You're logged in as admin.");
+        window.location.href = "main_page.html"; // Change "main_page.html" to your actual main page URL
+    } else {
+        alert("Registration successful! You can now login.");
+    }
+});
+</script>
+</body>
+</html>
